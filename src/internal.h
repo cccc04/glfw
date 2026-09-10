@@ -481,6 +481,7 @@ struct _GLFWfbconfig
     GLFWbool    sRGB;
     GLFWbool    doublebuffer;
     GLFWbool    transparent;
+    GLFWbool    floatPixelType;
     uintptr_t   handle;
 };
 

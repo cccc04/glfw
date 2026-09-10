@@ -163,8 +163,13 @@ static int choosePixelFormatWGL(_GLFWwindow* window,
                 continue;
             }
 
-            if (FIND_ATTRIB_VALUE(WGL_PIXEL_TYPE_ARB) != WGL_TYPE_RGBA_ARB)
+            const int pixelType = FIND_ATTRIB_VALUE(WGL_PIXEL_TYPE_ARB);
+
+            if (pixelType != WGL_TYPE_RGBA_ARB &&
+                pixelType != WGL_TYPE_RGBA_FLOAT_ARB)
+            {
                 continue;
+            }
 
             if (FIND_ATTRIB_VALUE(WGL_ACCELERATION_ARB) == WGL_NO_ACCELERATION_ARB)
                 continue;
@@ -176,6 +181,9 @@ static int choosePixelFormatWGL(_GLFWwindow* window,
             u->greenBits = FIND_ATTRIB_VALUE(WGL_GREEN_BITS_ARB);
             u->blueBits = FIND_ATTRIB_VALUE(WGL_BLUE_BITS_ARB);
             u->alphaBits = FIND_ATTRIB_VALUE(WGL_ALPHA_BITS_ARB);
+
+            if (pixelType == WGL_TYPE_RGBA_FLOAT_ARB)
+                u->floatPixelType = GLFW_TRUE;
 
             u->depthBits = FIND_ATTRIB_VALUE(WGL_DEPTH_BITS_ARB);
             u->stencilBits = FIND_ATTRIB_VALUE(WGL_STENCIL_BITS_ARB);
