@@ -345,6 +345,10 @@ GLFWAPI void glfwWindowHint(int hint, int value)
         case GLFW_SRGB_CAPABLE:
             _glfw.hints.framebuffer.sRGB = value;
             return;
+        case GLFW_FLOAT_PIXEL_TYPE:
+            _glfw.hints.framebuffer.floatPixelType =
+                value ? GLFW_TRUE : GLFW_FALSE;
+            return;
         case GLFW_RESIZABLE:
             _glfw.hints.window.resizable = value;
             return;

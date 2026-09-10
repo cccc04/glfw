@@ -1022,7 +1022,7 @@ extern "C" {
  *  [attribute](@ref GLFW_DOUBLEBUFFER_attrib).
  */
 #define GLFW_DOUBLEBUFFER           0x00021010
-
+#define GLFW_FLOAT_PIXEL_TYPE       0x00021011
 /*! @brief Context client API hint and attribute.
  *
  *  Context client API [hint](@ref GLFW_CLIENT_API_hint) and

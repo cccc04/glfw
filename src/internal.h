@@ -478,6 +478,7 @@ struct _GLFWfbconfig
     int         auxBuffers;
     bool        stereo;
     int         samples;
+    GLFWbool    floatPixelType;
     bool        sRGB;
     bool        doublebuffer;
     bool        transparent;
